@@ -9,8 +9,12 @@ func josephusSurvivor(n, k int) int {
 	for i := 0; i < n; i++ {
 		lista = append(lista, i+1)
 	}
-	var index, c int
+	var index, c, aux int
 	for true {
+		if len(lista) != aux {
+			fmt.Println(lista)
+			aux = len(lista)
+		}
 		for i := index; ; i++ {
 			c++
 			if i == len(lista)-1 && c != k {
@@ -29,6 +33,7 @@ func josephusSurvivor(n, k int) int {
 			}
 		}
 		if len(lista) == 1 {
+			fmt.Println(lista)
 			break
 		}
 	}
